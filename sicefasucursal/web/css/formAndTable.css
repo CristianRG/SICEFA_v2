@@ -1,0 +1,121 @@
+/* .container-custom {
+    width: 90%;
+    height: calc(100vh - 10px);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    box-shadow: 0px 7px 20px 5px rgba(0, 0, 0, 0.38);
+    border-radius: 2px;
+    
+
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+
+    
+    display: flex;
+    gap: .5rem;
+}
+
+.busqueda{
+    margin-bottom:2rem;
+}
+
+#modify{
+    display: none;
+} */
+
+/* .actions {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    gap: .1rem;
+}
+
+.section-first-section,
+.section-second-section {
+    width: 4rem;
+    height: 2.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.767);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-personal-data:hover,
+.section-employee-data:hover {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    opacity: 0.9;
+}
+
+#employee-data {
+    display: none;
+}
+
+.section-form {
+    width: 40%;
+    
+} */
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first-section, .second-section {
+    width: 80%;
+    padding: 5px;
+    /* box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.78); */
+}
+
+.foto{
+    width: 100%;
+    height: fit-content;
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.foto img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.first-section label, .second-section label {
+    display: inline-block;
+    width: 150px; /* Puedes ajustar el ancho según tus necesidades */
+    text-align: left;
+    margin-right: 2px;
+}
+
+.first-section input, .second-section input, .second-section select {
+    width: 10rem;
+    box-sizing: border-box;
+}
+
+
+/* .table-data {
+    width: 75%;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+section table {
+    width: 100%;
+    border: 1px solid black;
+}
+
+section .table thead tr th {
+    background: #006CF0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.danger{
+    color: red;
+} */

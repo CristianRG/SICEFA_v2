@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="CoyoTech">
+  <meta name="keywords" content="SICEFA, SICEFA 4TO, Integradora, UTL">
+  <meta name="description" content="SICEFA del cuarto cuatrimestre. Proyecto integrador">
+  <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+  <title>SICEFA</title>
+
+  <link rel="stylesheet" href="../css/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/package/dist/sweetalert2.all.min.js">
+  <link rel="stylesheet" href="../css/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../css/fontawesome-free-6.4.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../css/style_index.css">
+  <link rel="stylesheet" href="../css/sistem.css">
+  <link rel="stylesheet" href="../css/formAndTable.css">
+</head>
+
+<body>
+  <header>
+    <div class="general-information">
+      Sicefa Sucursal
+    </div>
+  </header>
+  <div class="container-custom">
+    <div class="side-bar">
+
+      <div class="contenido-side-bar">
+        <div class="user">
+          <div class="foto">
+            <i class="fa-solid fa-user fa-xl"></i>
+            <div class="username-sidebar" id="username-sidebar">Cristian Alexander Rizo Gomez</div>
+          </div>
+          <div class="info-user" id="info-user">
+            Puesto: Gerente <br>
+            Sucursal: Central <br>
+            ID sucursal: 1
+          </div>
+        </div>
+        <div class="modulo">
+          <i class="fa-solid fa-shop fa-sm"></i>
+          <a href="#">Sucursales</a>
+        </div>
+        <div class="modulo">
+          <i class="fa-solid fa-user-tie fa-lg"></i>
+          <a href="./empleado.html">Empleados</a>
+        </div>
+        <div class="modulo">
+          <i class="fa-solid fa-users fa-lg"></i>
+          <a href="#">Clientes</a>
+        </div>
+        <div class="modulo">
+          <i class="fa-solid fa-pills fa-lg"></i>
+          <a href="#">Productos</a>
+        </div>
+        <div class="modulo">
+          <i class="fa-solid fa-bag-shopping fa-lg"></i>
+          <a href="./ventas.html">Ventas</a>
+        </div>
+
+        <div class="signout">
+          <i class="fa fa-sign-in" aria-hidden="true"></i>
+          <a href="#" onclick="signOut()">Sign out</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- here all your code -->
+
+    <main>
+      <section>
+        <div class="title-modulo">Ventas</div>
+        <div class="busqueda">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+          <button class="btn btn-outline-success">Search</button>
+        </div>
+        <div class="buttons-modulo">
+            <!-- Button trigger modal -->
+            <!-- modal for add -->
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="agregar">Agregar</button>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" disabled id="modificar">Modificar</button>
+            <button type="button" class="btn btn-outline-primary" id="reactivar">Reactivar</button>
+            
+            <div class="switch">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="switchInactivos">
+                    <label class="form-check-label" for="switchInactivos">Inactivos</label>
+                </div>
+            </div>
+        </div>
+        <div class="table-section">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Empleado</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Estatus</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="body-consulta">
+              
+            </tbody>
+          </table>
+        </div>
+        <nav aria-label="Page navigation example" class="pagination-container">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" onclick="changePage(-1)" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+              <li class="page-item">
+                <a class="page-link" onclick="changePage(1)" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        <div class="pagination-div">
+
+        </div>
+      </section>
+    </main>
+
+    <!-- modal -->
+    
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Agregar venta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="foto">
+          <!-- Si necesitas poner una foto pon un input choose aqui -->
+          <img src="" alt="">
+        </div>
+        <div class="inputs">
+          <div class="first-section" id="first-section">
+            <label for="txtCodigoImagen">Imagen:</label>
+            <input type="file" id="txtaCodigoImagen" required><br>
+
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" id="txtNombre" required><br>
+
+            <label for="txtApellidoPaterno">Apellido Paterno:</label>
+            <input type="text" id="txtApellidoPaterno" required><br>
+
+            <label for="txtApellidoMaterno">Apellido Materno:</label>
+            <input type="text" id="txtApellidoMaterno" required><br>
+
+            <label for="cmbGenero">Género:</label>
+            <select id="cmbGenero" required>
+                <option value="O">Masculino</option>
+                <option value="F">Femenino</option>
+            </select><br>
+
+            <label for="txtFechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="txtFechaNacimiento" required><br>
+
+            <label for="txtRfc">RFC:</label>
+            <input type="text" id="txtRfc" required><br>
+
+            <label for="txtCurp">CURP:</label>
+            <input type="text" id="txtCurp" required><br>
+
+            <label for="txtDomicilio">Domicilio:</label>
+            <input type="text" id="txtDomicilio" required><br>
+
+            <label for="txtCp">Código Postal:</label>
+            <input type="text" id="txtCp" required><br>
+
+            <label for="txtCiudad">Ciudad:</label>
+            <input type="text" id="txtCiudad" required><br>
+
+            <label for="txtEstado">Estado:</label>
+            <input type="text" id="txtEstado" required><br>
+
+            <label for="txtTelefono">Teléfono:</label>
+            <input type="text" id="txtTelefono" required><br>
+
+            <label for="txtEmail">Email:</label>
+            <input type="email" id="txtEmail" required><br>
+        </div>
+        <!-- Datos del empleado -->
+        <div class="second-section" id="second-section">
+            <label for="cmbIdSucursal">ID Sucursal</label>
+            <select id="cmbIdSucursal" required>
+                <option value="1">1</option>
+            </select>
+
+            <label for="txtFechaIngreso">Fecha de Ingreso:</label>
+            <input type="date" id="txtFechaIngreso" required><br>
+
+            <label for="cmbPuesto">Puesto:</label>
+            <select id="cmbPuesto">
+                <option value="Administrador">Administrador</option>
+                <option value="Empleado">Empleado</option>
+            </select><br>
+
+            <label for="txtSalarioBruto">Salario Bruto:</label>
+            <input type="number" id="txtSalarioBruto" required><br>
+
+            <label for="cmbEstatus">Estatus:</label>
+            <select id="cmbEstatus">
+                <option value="1">Activo</option>
+            </select>
+            <!-- <input type="number" id="cmbEstatus" required><br> -->
+
+            <label for="cmbRol">Rol:</label>
+            <input type="text" id="cmbRol" required disabled><br>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+  <!-- <footer>
+        &copy; Sicefa Medicamos tu vida 2023 - 2023
+    </footer> -->
+  <script src="../css/package/dist/sweetalert2.all.min.js"></script>
+  <script src="../css/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="../js/configuration.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/ventas.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
