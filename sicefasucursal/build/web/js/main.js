@@ -18,7 +18,6 @@ function cargarDatosUsuario(infoUser){
                 Sucursal: ${infoUser.empleadoInfo.sucursal.nombre} <br>
                 ID sucursal: ${infoUser.empleadoInfo.sucursal.idSucursal}
                 `;
-    console.log(infoUser);
     divUsuario.innerHTML = info;
     nombreEmpleado.innerHTML = `${infoUser.empleadoInfo.persona.nombre} ${infoUser.empleadoInfo.persona.apellidoPaterno} ${infoUser.empleadoInfo.persona.apellidoMaterno}`;  
 }
