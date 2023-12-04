@@ -25,7 +25,7 @@ public class EmpleadoController {
             Persona persona = new Persona(rs.getInt("idPersona"),rs.getString("pNombre"),rs.getString("apellidoPaterno"),rs.getString("apellidoMaterno"),rs.getString("genero"),
                     rs.getString("fechaNacimiento"),rs.getString("pRFC"),rs.getString("curp"),rs.getString("domicilio"),rs.getString("pCodigoPostal"), rs.getString("pCiudad"),
                     rs.getString("pEstado"), rs.getString("pTelefono"),rs.getString("foto"));
-            Sucursal sucursal = new Sucursal(rs.getInt("idSucursal"),rs.getString("nombre"),rs.getString("titular"),rs.getString("rfc"),rs.getString("domicilio"),rs.getString("codigoPostal"),
+            Sucursal sucursal = new Sucursal(rs.getInt("idSucursal"),rs.getString("nombre"),rs.getString("titular"),rs.getString("rfc"),rs.getString("domicilio"),rs.getString("colonia"),rs.getString("codigoPostal"),
                     rs.getString("ciudad"), rs.getString("estado"),rs.getString("telefono"),rs.getString("latitud"),rs.getString("longitud"),rs.getInt("estatus"));
             Empleado empleado = new Empleado(rs.getInt("idEmpleado"),rs.getString("email"),rs.getString("codigo"),rs.getString("fechaIngreso"),rs.getString("puesto"),rs.getFloat("salarioBruto"),rs.getInt("activo"), persona, usuario, sucursal);
             empleados.add(empleado);
@@ -58,7 +58,7 @@ public class EmpleadoController {
         Persona persona = new Persona(rs.getInt("idPersona"),rs.getString("pNombre"),rs.getString("apellidoPaterno"),rs.getString("apellidoMaterno"),rs.getString("genero"),
              rs.getString("fechaNacimiento"),rs.getString("pRFC"),rs.getString("curp"),rs.getString("domicilio"),rs.getString("pCodigoPostal"), rs.getString("pCiudad"),
                     rs.getString("pEstado"), rs.getString("pTelefono"),rs.getString("foto"));
-        Sucursal sucursal = new Sucursal(rs.getInt("idSucursal"),rs.getString("nombre"),rs.getString("titular"),rs.getString("rfc"),rs.getString("domicilio"),rs.getString("codigoPostal"),
+        Sucursal sucursal = new Sucursal(rs.getInt("idSucursal"),rs.getString("nombre"),rs.getString("titular"),rs.getString("rfc"),rs.getString("domicilio"),rs.getString("colonia"),rs.getString("codigoPostal"),
                     rs.getString("ciudad"), rs.getString("estado"),rs.getString("telefono"),rs.getString("latitud"),rs.getString("longitud"),rs.getInt("estatus"));
         empleado = new Empleado(rs.getInt("idEmpleado"),rs.getString("email"),rs.getString("codigo"),rs.getString("fechaIngreso"),rs.getString("puesto"),rs.getFloat("salarioBruto"),rs.getInt("activo"), persona, usuario, sucursal);
         

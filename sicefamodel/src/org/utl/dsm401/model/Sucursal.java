@@ -30,6 +30,7 @@ public class Sucursal {
     private String titular;
     private String rfc;
     private String domicilio;
+    private String colonia;
     private String codigoPostal;
     private String ciudad;
     private String estado;
@@ -41,7 +42,7 @@ public class Sucursal {
     public Sucursal() {
     }
 
-    public Sucursal(String nombre, String titular, String rfc, String domicilio, String codigoPostal, String ciudad, String estado, String telefono, String latitud, String longitud, int estatus) {
+    public Sucursal(String nombre, String titular, String rfc, String domicilio, String colonia, String codigoPostal, String ciudad, String estado, String telefono, String latitud, String longitud, int estatus) {
         this.nombre = nombre;
         this.titular = titular;
         this.rfc = rfc;
@@ -55,7 +56,7 @@ public class Sucursal {
         this.estatus = estatus;
     }
 
-    public Sucursal(int idSucursal, String nombre, String titular, String rfc, String domicilio, String codigoPostal, String ciudad, String estado, String telefono, String latitud, String longitud, int estatus) {
+    public Sucursal(int idSucursal, String nombre, String titular, String rfc, String domicilio, String colonia, String codigoPostal, String ciudad, String estado, String telefono, String latitud, String longitud, int estatus) {
         this.idSucursal = idSucursal;
         this.nombre = nombre;
         this.titular = titular;
@@ -70,6 +71,14 @@ public class Sucursal {
         this.estatus = estatus;
     }
 
+    public String getColonia() {
+        return colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+    
     public int getIdSucursal() {
         return idSucursal;
     }

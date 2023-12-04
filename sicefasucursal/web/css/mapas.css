@@ -1,0 +1,12 @@
+#mapa1, #mapa2, #mapa3, #mapa4 {
+    width:400px;
+    height: 400px;
+    background-color: pink;
+}
+#mapa1, #mapa2, #mapa3, #mapa4 {
+    height: 400px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; /* Agrega margen automático para centrar */
+}
